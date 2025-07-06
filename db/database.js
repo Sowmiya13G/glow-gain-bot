@@ -36,6 +36,15 @@ function setupDatabase() {
       done INTEGER,
       created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )`);
+
+    // ✅ NEW: Routine logs table (for wake up, hair wash, etc)
+    db.run(`CREATE TABLE IF NOT EXISTS routine_logs (
+      id INTEGER PRIMARY KEY,
+      user_id TEXT,
+      routine_type TEXT,  -- e.g., 'wake_up', 'hair_wash'
+      value TEXT,         -- optional (time, status, etc)
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    )`);
   });
 }
 

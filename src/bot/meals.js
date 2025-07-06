@@ -1,5 +1,5 @@
-const { getNutrients } = require('../services/nutritionix');
-const { db } = require('../db/database');
+const { getNutrients } = require('../../services/nutritionix');
+const { db } = require('../../db/database');
 
 module.exports = (bot) => {
   bot.onText(/\/add_meal (.+)/, (msg, match) => {

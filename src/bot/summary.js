@@ -1,4 +1,4 @@
-const { db } = require('../db/database');
+const { db } = require('../../db/database');
 
 module.exports = (bot) => {
   bot.onText(/\/summary/, (msg) => {
