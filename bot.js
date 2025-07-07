@@ -11,8 +11,8 @@ require('./src/bot/workouts')(bot);
 require('./src/bot/summary')(bot);
 require('./src/bot/care')(bot);
 require('./src/bot/reminders')(bot);
-setupWakeupReminder(bot);
-handleWakeupResponse(bot);
+// setupWakeupReminder(bot);
+// handleWakeupResponse(bot);
 
 // Setup database
 setupDatabase();
