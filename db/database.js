@@ -36,7 +36,15 @@ function setupDatabase() {
       done INTEGER,
       created_at TEXT DEFAULT CURRENT_TIMESTAMP
     )`);
-
+    db.run(`
+    CREATE TABLE IF NOT EXISTS water_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER,
+      amount_ml INTEGER,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+  
     // ✅ NEW: Routine logs table (for wake up, hair wash, etc)
     // db.run(`CREATE TABLE IF NOT EXISTS routine_logs (
     //   id INTEGER PRIMARY KEY,

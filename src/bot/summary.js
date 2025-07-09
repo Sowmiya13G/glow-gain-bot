@@ -3,7 +3,6 @@ const { db } = require('../../db/database');
 module.exports = (bot) => {
   bot.onText(/\/summary/, (msg) => {
     const chatId = msg.chat.id;
-
     const date = new Date().toISOString().split('T')[0]; // today
 
     db.get(`

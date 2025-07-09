@@ -5,10 +5,11 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 // Import modules
 require('./src/bot/meals')(bot);
-require('./src/bot/water')(bot);
+require('./src/bot/water-log')(bot);
 require('./src/bot/workouts')(bot);
 require('./src/bot/summary')(bot);
 require('./src/bot/care')(bot);
+require('./src/bot/water-log')(bot);
 // require('./src/bot/reminders')(bot);
 require('./src/cron/water-reminder')(bot);
 // Setup database
