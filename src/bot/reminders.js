@@ -13,13 +13,13 @@ module.exports = (bot) => {
 
   // Daily summary at 10PM
   cron.schedule('0 22 * * *', () => {
-    const chatId = 'your_chat_id'; // Replace or fetch dynamically
+    const chatId = process.env.CHAT_ID; // Replace or fetch dynamically
     bot.sendMessage(chatId, '⏰ Time for your daily summary! Type /summary to see it.');
   });
 
   // Weekly summary on Sundays at 10PM
   cron.schedule('0 22 * * 0', () => {
-    const chatId = 'your_chat_id';
+    const chatId = process.env.CHAT_ID;
     bot.sendMessage(chatId, '📅 Weekly summary time! (Coming soon)');
   });
 
