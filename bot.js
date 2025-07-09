@@ -10,7 +10,8 @@ require('./src/bot/workouts')(bot);
 require('./src/bot/summary')(bot);
 require('./src/bot/care')(bot);
 require('./src/bot/water-log')(bot);
-// require('./src/bot/reminders')(bot);
+require('./src/bot/export')(bot);
+
 require('./src/cron/water-reminder')(bot);
 // Setup database
 setupDatabase();
