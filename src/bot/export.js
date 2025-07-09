@@ -45,7 +45,11 @@ module.exports = (bot) => {
       await workbook.xlsx.writeFile(filepath);
 
       // Send file via Telegram
-      await bot.sendDocument(chatId, filepath, {
+      await bot.sendDocument(chatId, {
+        source: filepath,
+        filename: filename,
+        contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      }, {
         caption: '📦 Here is your exported data.',
       });
 
