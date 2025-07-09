@@ -4,7 +4,7 @@ module.exports = (bot) => {
   // Every 40 minutes from 6AM–9PM
   cron.schedule('*/40 6-21 * * *', () => {
     // Replace with list of user IDs or broadcast storage later
-    const userIds = [/* hardcode your chat ID for now */];
+    const userIds = [process.env.CHAT_ID];
 
     for (const userId of userIds) {
       bot.sendMessage(userId, '💧 Reminder: Drink some water!');
