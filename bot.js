@@ -2,7 +2,6 @@ require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const { setupDatabase } = require('./db/database');
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
-// const { setupWakeupReminder, handleWakeupResponse } = require('./src/cron/routine-reminder');
 
 // Import modules
 require('./src/bot/meals')(bot);
@@ -10,10 +9,8 @@ require('./src/bot/water')(bot);
 require('./src/bot/workouts')(bot);
 require('./src/bot/summary')(bot);
 require('./src/bot/care')(bot);
-require('./src/bot/reminders')(bot);
-// setupWakeupReminder(bot);
-// handleWakeupResponse(bot);
-
+// require('./src/bot/reminders')(bot);
+require('./src/cron/water-reminder')(bot);
 // Setup database
 setupDatabase();
 
